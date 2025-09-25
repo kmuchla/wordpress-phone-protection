@@ -23,9 +23,7 @@ Dzięki temu numer nie pojawia się w źródle HTML i jest znacznie trudniejszy 
 3. Włącz wtyczkę i wstaw shortcode na dowolnej stronie/postcie:
 <pre>
 
-```text
 [tel_turnstile country="+48" parts="601|234|567" label="Pokaż numer" ttl="1800"]
-```
 
 </pre>
 ## ✨ Funkcjonalności
@@ -53,7 +51,9 @@ Dzięki temu numer nie pojawia się w źródle HTML i jest znacznie trudniejszy 
 
 Użyj shortcode’u w treści wpisu lub strony:
 
+```text
 [tel_turnstile country="+48" parts="601|234|567" label="Zadzwoń" ttl="900"]
+```
 
 ## 🏗 Jak to działa
 
