@@ -13,6 +13,13 @@ Dzięki temu numer nie pojawia się w źródle HTML i jest znacznie trudniejszy 
 
 1. **Skopiuj plik wtyczki**
    `src/tel-turnstile-snippet.php` → `wp-content/plugins/phone-protection/phone-protection.php`
+
+   > 💡 **Alternatywa:**
+   > Jeśli nie chcesz tworzyć własnej wtyczki, możesz skorzystać z popularnej wtyczki do snippetów
+   > (np. **Code Snippets**).
+   > Wystarczy utworzyć nowy snippet typu _PHP_ i wkleić tam zawartość pliku
+   > `src/tel-turnstile-snippet.php`.
+
 2. **Dodaj klucze w `wp-config.php`**
 
    ```php
@@ -21,11 +28,11 @@ Dzięki temu numer nie pojawia się w źródle HTML i jest znacznie trudniejszy 
    ```
 
 3. Włącz wtyczkę i wstaw shortcode na dowolnej stronie/postcie:
-<pre>
 
+```text
 [tel_turnstile country="+48" parts="601|234|567" label="Pokaż numer" ttl="1800"]
+```
 
-</pre>
 ## ✨ Funkcjonalności
 
 - Weryfikacja użytkownika za pomocą **Cloudflare Turnstile**
