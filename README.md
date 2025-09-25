@@ -7,7 +7,7 @@ Dzięki temu numer nie pojawia się w źródle HTML i jest znacznie trudniejszy 
 
 - 🔒 Ochrona danych kontaktowych przed scrapowaniem.
 - 💡 Integracja WordPress + Cloudflare Turnstile.
-- 🧩 Przykład mini-wtyczki jako element portfolio w cyberbezpieczeństwie.
+- 🧩 Przykład mini-wtyczki Wordpress.
 
 ## ⚡️ Szybki start
 
@@ -18,41 +18,66 @@ Dzięki temu numer nie pojawia się w źródle HTML i jest znacznie trudniejszy 
    ```php
    define('KM_TURNSTILE_SITEKEY', 'TWÓJ_SITE_KEY');
    define('KM_TURNSTILE_SECRET',  'TWÓJ_SECRET_KEY');
-
-   3.	Włącz wtyczkę i wstaw shortcode na dowolnej stronie/postcie:
    ```
 
+3. Włącz wtyczkę i wstaw shortcode na dowolnej stronie/postcie:
+<pre>
+
+```text
 [tel_turnstile country="+48" parts="601|234|567" label="Pokaż numer" ttl="1800"]
+```
 
-✨ Funkcjonalności
-• Weryfikacja użytkownika za pomocą Cloudflare Turnstile.
-• Numer generowany i przechowywany tylko po stronie serwera.
-• Jednorazowy uchwyt (transient) z czasem życia (TTL).
-• Bezpieczny endpoint AJAX z nonce i sanitizacją danych.
+</pre>
+## ✨ Funkcjonalności
 
-🔧 Parametry shortcode
+- Weryfikacja użytkownika za pomocą **Cloudflare Turnstile**
+- Numer generowany i przechowywany **tylko po stronie serwera**
+- Jednorazowy uchwyt (Transient) z konfigurowalnym **czasem życia (TTL)**
+- Bezpieczny endpoint AJAX z **nonce** i sanitizacją danych
 
-Parametr Wymagany Domyślna Opis
-country nie +48 Prefiks kraju.
-parts tak — Numery telefonu rozdzielone | (np. 601|234|567).
-label nie Pokaż numer Tekst przycisku.
-ttl nie 1800 Czas (sekundy) przechowywania uchwytu.
+## 🔧 Parametry shortcode
 
-Przykład:
+- **`country`** – _(opcjonalny)_ – domyślnie **`+48`**
+  Prefiks kraju.
 
+- **`parts`** – _(wymagany)_ – brak wartości domyślnej
+  Numery telefonu rozdzielone znakiem `|`, np. **`601|234|567`**.
+
+- **`label`** – _(opcjonalny)_ – domyślnie **`Pokaż numer`**
+  Tekst przycisku wyświetlanego użytkownikowi.
+
+- **`ttl`** – _(opcjonalny)_ – domyślnie **`1800`** (sekundy)
+  Czas życia jednorazowego uchwytu (Transient) w bazie WordPress.
+
+## 📝 Przykład użycia
+
+Użyj shortcode’u w treści wpisu lub strony:
+
+```text
 [tel_turnstile country="+48" parts="601|234|567" label="Zadzwoń" ttl="900"]
+```
 
-🏗 Jak to działa 1. Użytkownik klika przycisk „Pokaż numer”. 2. Renderuje się widget Turnstile. 3. Po weryfikacji token trafia do serwera. 4. Serwer weryfikuje token u Cloudflare i zwraca numer telefonu. 5. Front-end podmienia przycisk na klikalny link tel:+48….
+## 🏗 Jak to działa
 
-🔐 Bezpieczeństwo
-• Token Turnstile weryfikowany po stronie serwera (/siteverify).
-• Numer nigdy nie pojawia się w źródle HTML.
-• wp_verify_nonce + sanitizacja danych wejściowych.
-• Zalecane dodatkowe reguły WAF/Rate-Limit w Cloudflare na admin-ajax.php?action=km_tel_reveal.
+1. Użytkownik klika przycisk **„Pokaż numer”**.
+2. Renderuje się widget **Cloudflare Turnstile**.
+3. Po weryfikacji token trafia do serwera.
+4. Serwer weryfikuje token w Cloudflare i zwraca numer telefonu.
+5. Front-end podmienia przycisk na klikalny link **`tel:+48…`**.
 
-Szczegóły w SECURITY.md.
+---
 
-📂 Struktura repozytorium
+## 🔐 Bezpieczeństwo
+
+- Token Turnstile weryfikowany po stronie serwera (`/siteverify`)
+- Numer nigdy nie pojawia się w źródle HTML
+- `wp_verify_nonce` + sanitizacja danych wejściowych
+- Zalecane dodatkowe reguły **WAF/Rate-Limit** w Cloudflare
+  na endpoint `admin-ajax.php?action=km_tel_reveal`
+
+Więcej informacji znajdziesz w pliku **`SECURITY.md`**.
+
+## 📂 Struktura repozytorium
 
 ├─ src/
 │ └─ tel-turnstile-snippet.php # główny plik wtyczki
@@ -61,6 +86,6 @@ Szczegóły w SECURITY.md.
 ├─ LICENSE
 └─ README.md
 
-📝 Licencja
+## 📝 Licencja
 
 Projekt udostępniony na licencji MIT.
