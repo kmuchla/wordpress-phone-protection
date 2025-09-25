@@ -13,7 +13,7 @@ Dzięki temu numer nie pojawia się w źródle HTML i jest znacznie trudniejszy 
 
 1. **Skopiuj plik wtyczki**
    `src/tel-turnstile-snippet.php` → `wp-content/plugins/phone-protection/phone-protection.php`
-2. **Dodaj klucze w `wp-config.php`** (nie commituj do repo):
+2. **Dodaj klucze w `wp-config.php`**
 
    ```php
    define('KM_TURNSTILE_SITEKEY', 'TWÓJ_SITE_KEY');
@@ -80,8 +80,8 @@ Więcej informacji znajdziesz w pliku **`SECURITY.md`**.
 ## 📂 Struktura repozytorium
 
 ├─ src/
-│ └─ tel-turnstile-snippet.php # główny plik wtyczki
-├─ docs/ # zrzuty ekranu, diagramy (opcjonalnie)
+│ └─ tel-turnstile-snippet.php
+├─ docs/
 ├─ SECURITY.md
 ├─ LICENSE
 └─ README.md
