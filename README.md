@@ -22,6 +22,8 @@ Dzięki temu numer nie pojawia się w źródle HTML i jest znacznie trudniejszy 
 
 2. **Dodaj klucze w `wp-config.php`**
 
+📄 Szczegółowa instrukcja generowania kluczy: [docs/CLOUDFLARE_KEYS.md](docs/CLOUDFLARE_KEYS.md)
+
    ```php
    define('KM_TURNSTILE_SITEKEY', 'TWÓJ_SITE_KEY');
    define('KM_TURNSTILE_SECRET',  'TWÓJ_SECRET_KEY');
