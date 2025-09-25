@@ -53,9 +53,7 @@ Dzięki temu numer nie pojawia się w źródle HTML i jest znacznie trudniejszy 
 
 Użyj shortcode’u w treści wpisu lub strony:
 
-```text
 [tel_turnstile country="+48" parts="601|234|567" label="Zadzwoń" ttl="900"]
-```
 
 ## 🏗 Jak to działa
 
@@ -64,8 +62,6 @@ Użyj shortcode’u w treści wpisu lub strony:
 3. Po weryfikacji token trafia do serwera.
 4. Serwer weryfikuje token w Cloudflare i zwraca numer telefonu.
 5. Front-end podmienia przycisk na klikalny link **`tel:+48…`**.
-
----
 
 ## 🔐 Bezpieczeństwo
 
@@ -79,12 +75,14 @@ Więcej informacji znajdziesz w pliku **`SECURITY.md`**.
 
 ## 📂 Struktura repozytorium
 
+```text
 ├─ src/
 │ └─ tel-turnstile-snippet.php
 ├─ docs/
 ├─ SECURITY.md
 ├─ LICENSE
 └─ README.md
+```
 
 ## 📝 Licencja
 
