@@ -1,6 +1,5 @@
 # Ochrona numeru telefonu w WordPress (Cloudflare Turnstile)
 
-Mały projekt z zakresu **cyberbezpieczeństwa aplikacji webowych**.
 Pokazuje, jak ukryć numer telefonu na stronie WordPress i ujawnić go **dopiero po pozytywnej weryfikacji** użytkownika przez Cloudflare Turnstile – dzięki temu numer nie pojawia się w źródle HTML i nie może być łatwo zebrany przez boty.
 
 ## 🎯 Cele projektu
